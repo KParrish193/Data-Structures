@@ -38,6 +38,7 @@ class QueueTests(unittest.TestCase):
         self.assertEqual(self.q.dequeue(), 105)
         self.assertEqual(len(self.q), 0)
         self.assertIsNone(self.q.dequeue())
+        print(len(self.q))
         self.assertEqual(len(self.q), 0)
 
 if __name__ == '__main__':

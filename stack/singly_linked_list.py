@@ -1,17 +1,17 @@
 class Node: 
-    def __init__(self, value=None, next_node=None):
+    def __init__(self, value = None, next_node = None):
         self.value = value
-        self.next_node = next_node
+        self.next = next_node
 
     def get_value(self):
         return self.value
     
     def get_next(self):
-        return self.next_node
+        return self.next
 
     def set_next(self, new_next):
-        # ? set new referenced next
-        self.next_node = new_next
+        # set new referenced next
+        self.next = new_next
 
 class LinkedList:
     def __init__(self):
@@ -20,7 +20,7 @@ class LinkedList:
 
     def add_to_head(self, value):
         new_node = Node(value)
-        # ? if storage is empty, set new single node as both head and tail due to having size = 1
+            # ? if storage is empty, set new single node as both head and tail due to having size = 1
         if not self.head and not self.tail:
             self.head = new_node
             self.tail = new_node
@@ -28,7 +28,7 @@ class LinkedList:
             new_node.set_next(self.head)
             self.head = new_node
     
-    def add_to_end(self, value):
+    def add_to_tail(self, value):
         new_node = Node(value)
         # ? is list empty?
         if not self.head and not self.tail:
@@ -38,7 +38,7 @@ class LinkedList:
             self.tail.set_next(new_node)
             self.tail = new_node
 
-    def remove_from_head(self):
+    def remove_head(self):
         if not self.head:
             return None
         else:

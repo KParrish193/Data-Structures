@@ -38,7 +38,7 @@ Stretch: What if you could only use instances of your Stack class to implement t
 
 
 # ? linked list iteration, initialize as LinkedList class from other file
-from linked_list import LinkedList
+from singly_linked_list import LinkedList
 
 class Queue:
     def __init__(self):
@@ -53,5 +53,8 @@ class Queue:
         self.storage.add_to_end(value)
 
     def dequeue(self):
-        self.size -= 1
-        return self.storage.remove_from_head()
+        if self.size == 0:
+            return None
+        else:
+            self.size -= 1
+            return self.storage.remove_from_head()
