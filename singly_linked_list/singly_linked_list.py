@@ -1,0 +1,51 @@
+class Node: 
+    def __init__(self, value = None, next_node = None):
+        self.value = value
+        self.next = next_node
+
+    def get_value(self):
+        return self.value
+    
+    def get_next(self):
+        return self.next
+
+    def set_next(self, new_next):
+        # set new referenced next
+        self.next = new_next
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def add_to_head(self, value):
+        new_node = Node(value)
+            # ? if storage is empty, set new single node as both head and tail due to having size = 1
+        if not self.head and not self.tail:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.set_next(self.head)
+            self.head = new_node
+    
+    def add_to_tail(self, value):
+        new_node = Node(value)
+        # ? is list empty?
+        if not self.head and not self.tail:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            self.tail.set_next(new_node)
+            self.tail = new_node
+
+    def remove_head(self):
+        if not self.head:
+            return None
+        else:
+            value = self.head.get_value()
+            # ? sets next as head
+            self.head = self.head.get_next()
+            return value
+
+    def get_max(self):
+        
