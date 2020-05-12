@@ -46,6 +46,3 @@ class LinkedList:
             # ? sets next as head
             self.head = self.head.get_next()
             return value
-
-    def get_max(self):
-        
