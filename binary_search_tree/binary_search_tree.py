@@ -29,13 +29,15 @@ class BSTNode:
                 if self.left is not None:
                     self.left.insert(value)
                 # if left is empty, start new node
-                self.left = BSTNode(value)
+                else:
+                    self.left = BSTNode(value)
             # * insert right (value is more than current/self)
             else:
                 if self.right is not None:
                     self.right.insert(value)
                 # if right is empty, start new node
-                self.right = BSTNode(value)
+                else:
+                    self.right = BSTNode(value)
 
     # Return True if the tree contains the value
     # False if it does not
